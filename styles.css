@@ -20,3 +20,39 @@ body {
     border-bottom: 8px solid #83c5be;
     border-top: 8px solid #ffddd2;
 }
+.grey-header {
+    color: #495057;
+}
+
+.teal-header {
+    color: #83c5be;
+}
+
+.hover-line-text {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-line-text::after,
+.hover-line-text::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -7px;
+    background: linear-gradient(to right, #ffddd2, #83c5be);
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-line-text::before {
+    top: -7px;
+    transform-origin: left;
+}
+
+.hover-line-text:hover::after,
+.hover-line-text:hover::before {
+    transform: scaleX(1);
+}
